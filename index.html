@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Little Weather</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <main>
+            <section class="searchLocation">
+
+                <p class="title">Little Weather</p>
+                <div class="searchBox">
+                    <input type="text" name="locName" id="locName" placeholder="Enter a city name">
+                    <i class="fa-solid fa-magnifying-glass searchBtn" id="searchIco" onclick="getInfo()"></i>
+                </div>
+
+            </section>
+            <div class="mainBox">
+                <section class="mainWeather">
+
+                    <div class="upper">
+                        <div class="weatherIco">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+
+                        <h3 class="Weatitle" style="font-weight: 400;">Weather Today in <span
+                                class="cityName">DemoLocation</span> </h3>
+
+                    </div>
+                    <div class="center">
+                        <div class="tempBox">
+                            <p class="maxTemp" id="maxTemp">27.23°C
+
+                            </p>
+                            <p class="minTemp" id="minTemp">25.73°C</p>
+                        </div>
+                        <p class="weatherWord" id="weaWord">Clear</p>
+                    </div>
+                    <div class="bottom">
+                        <div class="infoBox pressure">
+                            <p>Pressure</p>
+                            <p><em id="press">1016 Mb</em></p>
+                        </div>
+                        <div class="infoBox visibility">
+                            <p>visibility</p>
+                            <p><em id="visi">6 Km</em></p>
+                        </div>
+                        <div class="infoBox humidity">
+                            <p>Humidity</p>
+                            <p><em id="humi">44%</em></p>
+                        </div>
+                    </div>
+
+                </section>
+                <section class="nextWeather">
+                    <h3>Weather Prediction For Coming Days</h3>
+
+                    <div class="nextWeatherBox">
+                        <img src="./icons/10n.png" alt="weather icon" class="nextWeaIcon">
+                        <div class="nextInfo">
+                            <p class="date">March 13 </p>
+                            <p class="nextWeaWord">Clouds </p>
+                        </div>
+                        <div class="nextTempBox">
+                            <p class="nextTemp">28° C /28° C</p>
+                        </div>
+                    </div>
+                    <div class="nextWeatherBox">
+                        <img src="./icons/10n.png" alt="weather icon" class="nextWeaIcon">
+                        <div class="nextInfo">
+                            <p class="date">March 14</p>
+                            <p class="nextWeaWord">Clouds</p>
+                        </div>
+                        <div class="nextTempBox">
+                            <p class="nextTemp">29° C/29° C</p>
+                        </div>
+                    </div>
+                    <div class="nextWeatherBox">
+                        <img src="./icons/10n.png" alt="weather icon" class="nextWeaIcon">
+                        <div class="nextInfo">
+                            <p class="date">March 15</p>
+                            <p class="nextWeaWord">Clouds </p>
+                        </div>
+                        <div class="nextTempBox">
+                            <p class="nextTemp">30° C /30° C</p>
+                        </div>
+                    </div>
+                    <div class="nextWeatherBox">
+                        <img src="./icons/02n.png" alt="weather icon" class="nextWeaIcon">
+                        <div class="nextInfo">
+                            <p class="date">March 16 </p>
+                            <p class="nextWeaWord">Rain</p>
+                        </div>
+                        <div class="nextTempBox">
+                            <p class="nextTemp">22° C /22° C</p>
+                        </div>
+                    </div>
+                    <div class="nextWeatherBox">
+                        <img src="./icons/02n.png" alt="weather icon" class="nextWeaIcon">
+                        <div class="nextInfo">
+                            <p class="date">March 17</p>
+                            <p class="nextWeaWord">Rain</p>
+                        </div>
+                        <div class="nextTempBox">
+                            <p class="nextTemp">22° C/22° C</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </body>
+    <script src="index.js"></script>
+
+</html>
