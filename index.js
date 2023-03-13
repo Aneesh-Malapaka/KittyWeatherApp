@@ -39,7 +39,7 @@ function setWeatherToday(city) {
             visibility.innerHTML = parseFloat(data.visibility) / 1000 + " km"
 
 
-            if (weaWordData == "Rain" || weaWordData == "Drizzle") {
+            if (weaWordData == "Rain" || weaWordData == "Drizzle" || weaWordData == "Thunderstorm") {
                 mainWeatherBox.style.backgroundImage = `url('./rainy.jpg')`
             }
             else if (weaWordData == "Clouds") {
@@ -50,7 +50,9 @@ function setWeatherToday(city) {
             }
             else if (weaWordData == "Snow") {
                 mainWeatherBox.style.backgroundImage = `url('./snowy.png')`
-
+            }
+            else if (weaWordData == "Haze" || weaWordData == "Mist" || weaWordData == "Fog") {
+                mainWeatherBox.style.backgroundImage = `url('./Haze.jpg')`
             }
 
         })
