@@ -211,43 +211,40 @@ h3 {
 @media screen and (min-width:950px) {
 
     body {
-        height: 100vh;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
-    .searchLocation {
-        margin-bottom: 5px;
+    main {
+        height: 100%;
+        width: 100%;
+        gap: 0;
     }
 
-    .searchLocation .title {
-        padding-top: 20px;
-    }
 
     .searchLocation .searchBox {
         width: 50%;
         text-align: center;
-        /* margin: initial auto; */
     }
 
     .searchBox input {
         width: 68%;
         height: 60px;
         font-size: 1.4em;
-
     }
 
     .mainBox {
         flex-direction: row;
-        scale: 0.87;
+        scale: 0.67;
     }
 
     .mainWeather,
     .nextWeather {
-        width: 30vw;
+        min-width: 35vw;
+        max-width: 45vw;
     }
 
     .mainWeather .upper h3 {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     .center .tempBox .minTemp {
@@ -260,7 +257,7 @@ h3 {
     }
 
     .nextWeather .nextWeatherBox {
-        width: 28vw;
+        width: 32vw;
     }
 
     .mainWeather {
@@ -276,7 +273,11 @@ h3 {
     }
 
     .searchLocation p {
-        font-size: 3em;
+        font-size: 2.3em;
+    }
+
+    .nextWeather h3 {
+        font-size: 2.2em;
     }
 
     .nextWeatherBox {
