@@ -228,13 +228,14 @@ h3 {
 
     .searchBox input {
         width: 68%;
-        height: 60px;
-        font-size: 1.4em;
+        height: 45px;
+        font-size: 1em;
     }
 
     .mainBox {
         flex-direction: row;
-        scale: 0.67;
+        scale: 0.6;
+        margin-top: -130px;
     }
 
     .mainWeather,
@@ -277,7 +278,7 @@ h3 {
     }
 
     .nextWeather h3 {
-        font-size: 2.2em;
+        font-size: 2.1em;
     }
 
     .nextWeatherBox {
