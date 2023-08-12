@@ -13,6 +13,17 @@ let nextTemp = document.querySelectorAll(".nextTemp")
 let nextWeaIcon = document.querySelectorAll(".nextWeaIcon")
 let cityTitle = document.querySelector(".cityName")
 let cityByCoords;
+
+//just for fun hehe
+let response_arr = [
+    "Seriously! Just Allow the location. UwU",
+    "Damn it, now I cant hack you.",
+    "If only you allowed the permission, I could meet you in real life UwU",
+    "Permission Denied by User! Location not sent to Area 51",
+    "Permission Denied by User! Forcefully taking the location by manifesting",
+    "Permission Denied by User! Looks like I'll have to rely on my psychic powers now.",
+    "Permission Denied by user! Missile lock unsuccessful"
+]
 function getInfo() {
 
     let city = document.getElementById("locName").value
@@ -79,7 +90,7 @@ window.onload = async function () {
 };
 
 function errorPermission() {
-    alert("Sorry, no position available.");
+    alert(response_arr[Math.floor(Math.random() * response_arr.length)]);
 }
 function setWeatherToday(city) {
 
