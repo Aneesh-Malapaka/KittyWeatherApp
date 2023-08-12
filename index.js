@@ -12,6 +12,7 @@ let nextWeaWord = document.querySelectorAll(".nextWeaWord")
 let nextTemp = document.querySelectorAll(".nextTemp")
 let nextWeaIcon = document.querySelectorAll(".nextWeaIcon")
 let cityTitle = document.querySelector(".cityName")
+let cityByCoords;
 function getInfo() {
 
     let city = document.getElementById("locName").value
@@ -22,6 +23,64 @@ function getInfo() {
 
 const API_KEY = '22d9acfe588102a2d120c9fa6338f176'
 
+//adding location fetch by longitude and latitude
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, errorPermission);
+    } else {
+        window.alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    const url = `https://geocoding-by-api-ninjas.p.rapidapi.com/v1/reversegeocoding?lat=${latitude}&lon=${longitude}`;
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '25823ba57dmsh5ae0a22908fe6bfp14b8e4jsn9a46d658e006',
+            'X-RapidAPI-Host': 'geocoding-by-api-ninjas.p.rapidapi.com'
+        }
+    };
+
+    try {
+        fetch(url, options)
+            .then(res => res.json())
+            .then(data => {
+                cityByCoords = data[0].name
+
+                console.log(cityByCoords)
+                cityTitle.textContent = cityByCoords
+                setWeatherToday(cityByCoords);
+                setWeatherNext(cityByCoords);
+            })
+        // cityByCoords = res;
+
+
+        // console.log(result);
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+
+
+window.onload = async function () {
+    try {
+        const position = getLocation();
+        // const latitude = position.coords.latitude;
+        // const longitude = position.coords.longitude;
+
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+function errorPermission() {
+    alert("Sorry, no position available.");
+}
 function setWeatherToday(city) {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&&units=metric&appid=${API_KEY}`)
