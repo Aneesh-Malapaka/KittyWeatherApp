@@ -12,6 +12,10 @@ let nextWeaWord = document.querySelectorAll(".nextWeaWord")
 let nextTemp = document.querySelectorAll(".nextTemp")
 let nextWeaIcon = document.querySelectorAll(".nextWeaIcon")
 let cityTitle = document.querySelector(".cityName")
+let pressureBox = document.querySelector(".pressure")
+let visibilityBox = document.querySelector(".visibility")
+let humidityBox = document.querySelector(".humidity")
+
 let cityByCoords;
 
 //just for fun hehe
@@ -108,15 +112,38 @@ function setWeatherToday(city) {
             humidity.innerHTML = data.main.humidity + "%"
             visibility.innerHTML = parseFloat(data.visibility) / 1000 + " km"
 
+            // Night Photo by Faris Mohammed on Unsplash
+            // Clouds Night Photo by Ashwini Chaudhary(Monty) on Unsplash
+            // Clouds Day Photo by Chris Nguyen on Unsplash
+
+            let hours = new Date();
+
+            console.log(hours.getHours());
 
             if (weaWordData == "Rain" || weaWordData == "Drizzle" || weaWordData == "Thunderstorm") {
                 mainWeatherBox.style.backgroundImage = `url('./rainy.jpg')`
             }
             else if (weaWordData == "Clouds") {
-                mainWeatherBox.style.backgroundImage = `url('./cloudy.jpg')`
+                if (hours >= 19 || hours <= 5) {
+                    mainWeatherBox.style.backgroundImage = `url('./cloudyNight.jpg')`
+                    mainWeatherBox.style.color = "#dfd9d1"
+                    pressureBox.style.backgroundColor = "#141237"
+                    visibilityBox.style.backgroundColor = "#39726a"
+                    humidityBox.style.backgroundColor = "#0c65c3"
+                }
+                else
+                    mainWeatherBox.style.backgroundImage = `url('./cloudyDay.jpg')`
             }
             else if (weaWordData == "Clear") {
-                mainWeatherBox.style.backgroundImage = `url('./sunny.jpg')`
+                if (hours >= 19 || hours <= 5) {
+                    mainWeatherBox.style.backgroundImage = `url('./nightClear.jpg')`
+                    mainWeatherBox.style.color = "#dfd9d1"
+                    pressureBox.style.backgroundColor = "#141237"
+                    visibilityBox.style.backgroundColor = "#39726a"
+                    humidityBox.style.backgroundColor = "#0c65c3"
+                }
+                else
+                    mainWeatherBox.style.backgroundImage = `url('./sunny.jpg')`
             }
             else if (weaWordData == "Snow") {
                 mainWeatherBox.style.backgroundImage = `url('./snowy.png')`
