@@ -166,16 +166,16 @@ h3 {
     font-weight: 500;
 }
 
-.bottom .pressure {
+.pressure {
     background-color: #1b143a;
     color: #fff;
 }
 
-.bottom .visibility {
+.visibility {
     background-color: rgb(154, 228, 106);
 }
 
-.bottom .humidity {
+.humidity {
     background-color: aliceblue;
 }
 
