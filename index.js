@@ -116,12 +116,16 @@ function setWeatherToday(city) {
             // Clouds Night Photo by Ashwini Chaudhary(Monty) on Unsplash
             // Clouds Day Photo by Chris Nguyen on Unsplash
 
-            let hours = new Date();
-
-            console.log(hours.getHours());
+            let date = new Date();
+            let hours = date.getHours()
+            console.log(date.getHours());
 
             if (weaWordData == "Rain" || weaWordData == "Drizzle" || weaWordData == "Thunderstorm") {
                 mainWeatherBox.style.backgroundImage = `url('./rainy.jpg')`
+                mainWeatherBox.style.color = "#000"
+                pressureBox.style.backgroundColor = "#141237"
+                visibilityBox.style.backgroundColor = "#9ae46a"
+                humidityBox.style.backgroundColor = "#f0f8ff"
             }
             else if (weaWordData == "Clouds") {
                 if (hours >= 19 || hours <= 5) {
@@ -130,9 +134,15 @@ function setWeatherToday(city) {
                     pressureBox.style.backgroundColor = "#141237"
                     visibilityBox.style.backgroundColor = "#39726a"
                     humidityBox.style.backgroundColor = "#0c65c3"
+                    console.log("Yes")
                 }
-                else
+                else {
                     mainWeatherBox.style.backgroundImage = `url('./cloudyDay.jpg')`
+                    mainWeatherBox.style.color = "#000"
+                    pressureBox.style.backgroundColor = "#141237"
+                    visibilityBox.style.backgroundColor = "#9ae46a"
+                    humidityBox.style.backgroundColor = "#f0f8ff"
+                }
             }
             else if (weaWordData == "Clear") {
                 if (hours >= 19 || hours <= 5) {
@@ -142,14 +152,27 @@ function setWeatherToday(city) {
                     visibilityBox.style.backgroundColor = "#39726a"
                     humidityBox.style.backgroundColor = "#0c65c3"
                 }
-                else
+                else {
                     mainWeatherBox.style.backgroundImage = `url('./sunny.jpg')`
+                    mainWeatherBox.style.color = "#000"
+                    pressureBox.style.backgroundColor = "#141237"
+                    visibilityBox.style.backgroundColor = "#9ae46a"
+                    humidityBox.style.backgroundColor = "#f0f8ff"
+                }
             }
             else if (weaWordData == "Snow") {
                 mainWeatherBox.style.backgroundImage = `url('./snowy.png')`
+                mainWeatherBox.style.color = "#000"
+                pressureBox.style.backgroundColor = "#141237"
+                visibilityBox.style.backgroundColor = "##9ae46a"
+                humidityBox.style.backgroundColor = "#f0f8ff"
             }
             else if (weaWordData == "Haze" || weaWordData == "Mist" || weaWordData == "Fog") {
                 mainWeatherBox.style.backgroundImage = `url('./Haze.jpg')`
+                mainWeatherBox.style.color = "#000"
+                pressureBox.style.backgroundColor = "#141237"
+                visibilityBox.style.backgroundColor = "#9ae46a"
+                humidityBox.style.backgroundColor = "##f0f8ff"
             }
 
         })
